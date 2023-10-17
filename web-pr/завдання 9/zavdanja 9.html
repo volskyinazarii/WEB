@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Завдання 9</title>
+</head>
+<body>
+    <h1>Завдання №9:створити новий масив методом splice</h1>
+
+
+    <script>
+
+        var originalArray = [1, 2, 3, 4, 5];
+        originalArray.splice(1, 0, 'a', 'b');
+        originalArray.splice(3, 0, 2, 3, 4);
+        originalArray.splice(7, 0, 'c', 5, 'e');
+
+        document.write('Новий масив: [' + originalArray.join(', ') + ']');
+    </script>
+</body>
+</html>
