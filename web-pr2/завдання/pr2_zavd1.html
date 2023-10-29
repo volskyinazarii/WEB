@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volskyi Nazar PI 20-02</title>
+</head>
+<body bgcolor="white">
+    <h1>Result</h1>
+    <input type="text" id="chas" size="10">
+    <script language="JavaScript">
+        function time() {
+            let currentTime = new Date();
+            let hours = currentTime.getHours();
+            let minutes = currentTime.getMinutes();
+            let seconds = currentTime.getSeconds();
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            let formattedTime = hours + ":" + minutes + ":" + seconds;
+            chas.value = formattedTime;
+
+            setTimeout(time, 1000);
+        }
+        time();
+    </script>
+</body>
+</html>
