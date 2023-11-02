@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volskyi Nazar PI 20-02</title>
+</head>
+<body>
+    <h1>Result</h1>
+    
+    <p id="total-score">Загальний рахунок: 0</p>
+    
+    <button id="next-task">Наступне завдання</button>
+    
+    <p id="task">Завдання: 3 x 7 = ?</p>
+    
+    <form id="answers-form">
+        <label>
+            <input type="radio" name="answer" id="answer1"> <span id="text1"></span>
+        </label>
+        <label>
+            <input type="radio" name="answer" id="answer2"> <span id="text2"></span>
+        </label>
+        <label>
+            <input type="radio" name="answer" id="answer3"> <span id="text3"></span>
+        </label>
+        <label>
+            <input type="radio" name="answer" id="answer4"> <span id="text4"></span>
+        </label>
+    </form>
+    
+    <button id="check-answer">Перевірити</button>
+    
+    <p id="result"></p>
+    
+    <script>
+        function generateTask() {
+            const num1 = Math.floor(Math.random() * 10) + 1; 
+            const num2 = Math.floor(Math.random() * 10) + 1; 
+            const correctAnswer = num1 * num2;
+            const answers = generateRandomAnswers(correctAnswer);
+            return { num1, num2, correctAnswer, answers };
+        }
+        
+        function generateRandomAnswers(correctAnswer) {
+            const answers = [correctAnswer];
+            while (answers.length < 4) {
+                const randomAnswer = Math.floor(Math.random() * 100) + 1;
+                if (!answers.includes(randomAnswer)) {
+                    answers.push(randomAnswer);
+                }
+            }
+            return answers;
+        }
+
+        let currentTask = generateTask();
+        let totalScore = 0;
+
+        function updateTask() {
+            currentTask = generateTask();
+            document.getElementById("task").textContent = `Завдання: ${currentTask.num1} x ${currentTask.num2} = ?`;
+            const radioButtons = document.querySelectorAll('input[name="answer"]');
+            for (let i = 0; i < radioButtons.length; i++) {
+                radioButtons[i].value = currentTask.answers[i];
+                document.getElementById(`text${i + 1}`).textContent = currentTask.answers[i];
+            }
+        }
+        
+        function checkAnswer() {
+            const selectedAnswer = document.querySelector('input[name="answer"]:checked');
+            
+            if (selectedAnswer && parseInt(selectedAnswer.value) === currentTask.correctAnswer) {
+                totalScore += 1;
+                document.getElementById("result").textContent = "Правильно!";
+            } else {
+                document.getElementById("result").textContent = "Неправильно і " + currentTask.correctAnswer;
+            }
+            document.getElementById("total-score").textContent = "Загальний рахунок: " + totalScore;
+        }
+
+        document.getElementById("next-task").addEventListener("click", function() {
+            updateTask();
+            document.getElementById("result").textContent = "";
+            const radioButtons = document.querySelectorAll('input[name="answer"]');
+            radioButtons.forEach(button => {
+                button.checked = false;
+            });
+        });
+
+        document.getElementById("check-answer").addEventListener("click", function() {
+            checkAnswer();
+        });
+
+        updateTask();
+    </script>
+</body>
+</html>
