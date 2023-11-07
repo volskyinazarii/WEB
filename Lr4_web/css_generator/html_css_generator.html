@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="block.css">
+</head>
+<body>
+    <div>Верхній лівий радіус:
+        <input type="range" id="rtl" min="0" max="100" value="0" oninput="generate('rtl', 'ttl', 'borderTopLeftRadius')">
+        <input type="text" id="ttl" value="0">
+    </div>
+    <div>Верхній правий радіус:
+        <input type="range" id="rtr" min="0" max="100" value="0" oninput="generate('rtr', 'ttr', 'borderTopRightRadius')">
+        <input type="text" id="ttr" value="0">
+    </div>
+    <div>Нижній правий радіус:
+        <input type="range" id="rbr" min="0" max="100" value="0" oninput="generate('rbr', 'tbr', 'borderBottomRightRadius')">
+        <input type="text" id="tbr" value="0">
+    </div>
+    <div>Нижній лівий радіус:
+        <input type="range" id="rbl" min="0" max="100" value="0" oninput="generate('rbl', 'tbl', 'borderBottomLeftRadius')">
+        <input type="text" id="tbl" value="0">
+    </div>
+
+    <div id="block"></div>
+
+    <script>
+        var block = document.getElementById('block');
+
+        function generate(radiusInputId, textInputId, radiusType) {
+            var radiusInput = document.getElementById(radiusInputId);
+            var textInput = document.getElementById(textInputId);
+
+            block.style[radiusType] = radiusInput.value + 'px';
+            textInput.value = radiusInput.value;
+        }
+    </script>
+</body>
+</html>
