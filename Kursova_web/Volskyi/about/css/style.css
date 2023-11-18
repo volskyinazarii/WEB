@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    font-style: normal;
+}
+
+.Our-goal, .Our-values {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    height: 600px;
+    background-color: #EA3D3C;
+    padding: 100px 200px;
+}
+
+.block img {
+    height: 100%;
+    width: 100%;
+}
+
+.description {
+    width: 550px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 64px;
+    margin-bottom: 28px;
+    color: #ffffff;
+}
+
+.descr-text {
+    width: 470px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.bgval {
+    background-image: url(../img/klaksa.png);
+}
+
+li {
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.black {
+    color: #303030;
+}
+
+.Striving {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    height: 600px;
+    padding: 100px 200px;
+}
+
+.Striving .title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;    
+}
+
+.Our-commitment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    height: 600px;
+    padding: 100px 200px;
+    background-color: #e7e7e7;    
+}
+
+.Our-commitment .title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;    
+}
+
+.Quote {
+    height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 50px;
+}
+
+.Quote img {
+    position: absolute;
+    height: 700px;
+    width: 95%;
+    z-index: -1;
+}
+
+.Quote .title {
+    padding: 50px;
+}
+
+.quote-text {
+    width: 700px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 50px;
+    position: relative;
+}
+
+.quote-text::before {
+    font-size: 11rem;
+    line-height: normal;
+    content: "“";
+    font-family: Georgia,serif;
+    color: #ec1818; 
+    position: absolute;
+    left: -5px;
+    top: -0.5em;
+}
+
+.director {
+    margin-top: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.director-text {
+    margin-top: 5px;
+    font-weight: 700;
+    font-size: 18px;
+    color: #ec1818;   
+}
