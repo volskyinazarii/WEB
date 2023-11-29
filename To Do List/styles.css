@@ -1,0 +1,66 @@
+body {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container {
+    align-self: center;
+    width: 600px;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+#taskInput {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#taskList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.taskItem {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 5px;
+    background-color: #fff;
+}
+
+.taskTextContainer {
+    flex-grow: 1; /* Займати всю доступну ширину */
+}
+
+.taskText.completed {
+    justify-self: flex-start;
+    text-decoration: line-through;
+    color: #888;
+    margin-right: 10px;
+}
+
+.deleteButton {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #fff;
+    background-color: #f00;
+    border: 1px solid #f00;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
