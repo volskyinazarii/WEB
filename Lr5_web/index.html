@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MEGASPORTt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="product-item">
+        <div class="q c">&lt;</div>
+        <div class="circle c new">НОВИНКА</div>
+        <div class="category c"><a href="https://megasport.ua/ua/catalog/perchatki/male/" >Рукавички<a></div>
+        <div class="l"></div>
+        <img src="rukavichku.jpeg" alt="Product 1" class="image">
+        <div class="name"><a href="https://megasport.ua/ua/product/new-productUnique-1696514125/" class="name" >Рукавички Nike M LG CLUB FLEECE 2.0 160169</a></div>
+        <div class="price c" >1 360 грн</div>
+        <button class="soon ">НЕЗАБАРОМ У ПРОДАЖІ</button>
+    </div>
+    <div class="product-item">
+        <div class="circle c hit">ХІТ ПРОДАЖІВ</div>
+        <div class="category c" ><a href="https://megasport.ua/ua/catalog/shapka-sharf-povyazka/male/" >Шапки<a></div>
+        <div class="l"></div>
+        <img src="shapku.jpeg" alt="Product 2" class="image">
+        <div class="name"><a href="https://megasport.ua/ua/product/mlb-new-york-yankees-italic_47bb-italc17ace-sw/" class="name" >Шапка 47 Brand MLB NEW YORK YANKEES ITALIC 159307</a></div>
+        <div class="price c" >1 720 грн</div>
+        <button class="add-to-cart" onclick="openQuantityModal(2)">У КОРЗИНУ</button>
+    </div>
+    <div class="product-item">
+        <div class="circle c hit">ХІТ ПРОДАЖІВ</div>
+        <div class="category c"><a href="https://megasport.ua/ua/catalog/sumka/male/">Сумки<a></div>
+        <div class="l"></div>
+        <img src="sumki.jpeg" alt="Product 3" class="image">
+        <div class="name"><a href="https://megasport.ua/ua/product/nk-heritage-s-crossbody_ba5871-254/" class="name" >Сумка Nike NK HERITAGE S CROSSBODY 159029</a></div>
+        <div class="price c" >899 грн</div>
+        <button class="add-to-cart" onclick="openQuantityModal(3)">У КОРЗИНУ</button>
+    </div>
+</div>
+<div class="cart-icon-container" onclick="openCartModal()">
+    <img src="topsport.png" alt="Cart Icon" class="cart-icon">
+    <span id="cartItemCount">0</span>
+</div>
+<div id="emptyCartModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeCartModal()">&times;</span>
+        <p>Корзина пуста</p>
+    </div>
+</div>
+<div id="quantityModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeQuantityModal()">&times;</span>
+        <p>Вкажіть кількість:</p>
+        <input type="number" id="quantityInput" min="1" value="1">
+        <button onclick="addToCart()">Додати до корзини</button>
+    </div>
+</div>
+<div id="addedToCartModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeAddedToCartModal()">&times;</span>
+        <p>Товар додано</p>
+        <button onclick="goToCart()">Перейти у корзину</button>
+        <button onclick="closeAddedToCartModal()">Повернутись до покупок</button>
+    </div>
+</div>
+<div class="cart-page">
+</div>
+<script src="script.js"></script>
+</body>
+</html>
