@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Країна та місто</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <select name="country" id="country" onchange="updateCities()">
+            <option value="undefined">Не визначено</option>
+            <option value="ukr">Ukraine</option>
+            <option value="pol">Poland</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <select name="cities" id="cities">
+            <option value="undefined">Не визначено</option>
+        </select>
+
+        <p id="result"></p>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
